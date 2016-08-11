@@ -154,7 +154,7 @@ body > div {
 }
 
 body {
-	background-color: #eee;
+	background-color: #fff;
 	color: #333;
 	font-family: 'Source Sans Pro', sans-serif;
 	font-size: 20px;
@@ -1457,7 +1457,6 @@ p.entry-meta {
 	font-size: 1.6rem;
 	line-height: 1;
 	padding: 60px 0;
-	text-align: center;
 }
 
 .site-footer p {

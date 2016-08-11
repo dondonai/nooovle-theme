@@ -162,7 +162,7 @@ function nooovle_theme_after_header() {
 					<hr>
 					<div class="price"><?php echo $price; ?></div>
 				</div>
-				<button class="btn">Book Now</button>
+				<button class="button">Book Now</button>
 				<?php
 				else :
 					echo 'no item to show';
@@ -183,7 +183,9 @@ function nooovle_theme_after_header() {
 	<?php genesis_structural_wrap('pricing-table', 'close'); ?>
 	</section> <!-- end of .pricing-table -->
 
+	<?php // our clients ?>
 	<section class="our-clients">
+	<?php genesis_structural_wrap('our-clients', 'open'); ?>
 	<?php
 	$logos = get_field('clients');
 
@@ -194,9 +196,56 @@ function nooovle_theme_after_header() {
 	        <?php endforeach; ?>
 	    </ul>
 	<?php endif; ?>
+	<?php genesis_structural_wrap('our-clients', 'close'); ?>
 
 	</section> <!-- end of .our-clients -->
 
+	<?php // free consulration ?>
+	<section class="consultation">
+		<?php
+		$consultationHeading = get_field('consultation_heading');
+		$consultationBtn = get_field('consultation_button');
+		?>
+		<h4><?php echo $consultationHeading; ?></h4>
+		<button class="button"><?php echo $consultationBtn; ?></button>
+	</section>
+
+	<?php // testimonial 2 ?>
+	<section class="testimonial">
+	<?php
+		genesis_structural_wrap( 'testimonial', 'open' );
+		$clientImg = get_field('client_2_image');
+		$clientName = get_field('client_2_name');
+		$clientCompany = get_field('client_2_company');
+		$clientPosition = get_field('client_2_position');
+		$clientTestimony = get_field('client_2_testimony');
+	?>
+		<div class="client">
+			<img class="client__img" src="<?php echo $clientImg['url']; ?>" alt="<?php echo $clientImg['alt']; ?>">
+			<div class="client__info">
+				<h4 class="client__info-name"><?php echo $clientName; ?></h4>
+				<span><?php echo $clientCompany; ?></span>
+				<span><?php echo $clientPosition; ?></span>
+			</div>
+			<div class="client__testimony">
+				<p><?php echo $clientTestimony; ?></p>
+			</div>
+		</div>
+	<?php
+		genesis_structural_wrap( 'testimonial', 'close' );
+	?>
+	</section> <!-- end of .testimonial -->
+
+	<section class="blog__posts">
+		<?php genesis_structural_wrap('blog', 'open'); ?>
+		<?php
+			genesis_widget_area( 'blog', array(
+				'before' => '<div class="blog__posts-items widget-area">',
+				'after' => '</div>'
+			));
+		?>
+		<?php genesis_structural_wrap('blog', 'close'); ?>
+	</section>
 	<?php
 }
 

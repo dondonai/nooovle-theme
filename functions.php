@@ -74,6 +74,8 @@ add_theme_support( 'genesis-structural-wraps', array(
 	'our-works',
 	'services',
 	'pricing-table',
+	'blog',
+	'our-clients',
     'menu-primary',
     'menu-secondary',
     'site-inner',
@@ -88,10 +90,11 @@ add_theme_support( 'custom-background' );
 add_theme_support( 'genesis-after-entry-widget-area' );
 
 //* Add support for 3-column footer widgets
-add_theme_support( 'genesis-footer-widgets', 3 );
+// add_theme_support( 'genesis-footer-widgets', 3 );
 
 //* Add Image Sizes
 add_image_size( 'featured-image', 720, 400, TRUE );
+add_image_size( 'blog-featured-image', 360, 200, TRUE );
 
 //* Rename primary and secondary navigation menus
 add_theme_support( 'genesis-menus' , array( 'primary' => __( 'After Header Menu', 'nooovle-theme' ), 'secondary' => __( 'Footer Menu', 'nooovle-theme' ) ) );
@@ -131,3 +134,59 @@ function nooovle_theme_comments_gravatar( $args ) {
 	return $args;
 
 }
+
+// add option page
+if( function_exists('acf_add_options_page') ) {
+
+	acf_add_options_page(array(
+		'page_title' 	=> 'Theme General Settings',
+		'menu_title'	=> 'Theme Settings',
+		'menu_slug' 	=> 'theme-general-settings',
+		'capability'	=> 'edit_posts',
+		'redirect'		=> false
+	));
+
+}
+
+remove_action( 'genesis_footer', 'genesis_do_footer' );
+add_action( 'genesis_footer', 'nooovle_theme_footer' );
+
+function nooovle_theme_footer() {
+	?>
+	<div class="footer__left two-sixths first">
+		<?php genesis_seo_site_title(); ?>
+		<?php $about = get_field('about', 'option'); ?>
+		<p><?php echo $about; ?></p>
+	</div>
+	<div class="footer__right two-sixths">
+	<h4 class="widget-title">Connect With Us</h4>
+		<?php
+		if(have_rows('social_links', 'option') ) :
+			?>
+			<ul class="footer__social">
+			<?php
+			while(have_rows('social_links', 'option') ) : the_row();
+			$icon = get_sub_field('icon');
+			$url = get_sub_field('url');
+			?>
+			<li class="footer__social-icon"><a href="<?php echo $url; ?>"><i class="fa <?php echo $icon; ?>"></i></a></li>
+			<?php
+			endwhile;
+			echo '</ul>';
+		else :
+			echo 'no item to show';
+		endif;
+
+		wp_reset_postdata();
+
+		?>
+
+	</div>
+	<?php
+}
+
+genesis_register_sidebar( array(
+	'id'          => 'blog',
+	'name'        => 'Blog',
+	'description' => 'Blog section widget'
+));

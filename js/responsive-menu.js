@@ -8,11 +8,11 @@
 
 	'use strict';
 
-	var genesisSample              = {},
+	var nooovleTheme              = {},
 		mainMenuButtonClass = 'menu-toggle',
 		subMenuButtonClass  = 'sub-menu-toggle';
 
-	genesisSample.init = function() {
+	nooovleTheme.init = function() {
 		var toggleButtons = {
 			menu : $( '<button />', {
 				'class' : mainMenuButtonClass,
@@ -20,7 +20,7 @@
 				'aria-pressed' : false,
 				'role' : 'button'
 				} )
-				.append( genesisSample.params.mainMenu ),
+				.append( nooovleTheme.params.mainMenu ),
 			submenu : $( '<button />', {
 				'class' : subMenuButtonClass,
 				'aria-expanded' : false,
@@ -29,7 +29,7 @@
 				} )
 				.append( $( '<span />', {
 					'class' : 'screen-reader-text',
-					text : genesisSample.params.subMenu
+					text : nooovleTheme.params.subMenu
 				} ) )
 		};
 		if ($( '.nav-primary' ).length > 0 ) {
@@ -41,9 +41,9 @@
 		$( '.' + mainMenuButtonClass ).each( _addClassID );
 		$( '.' + mainMenuButtonClass ).addClass('dashicons-before dashicons-menu');
 		$( '.' + subMenuButtonClass ).addClass('dashicons-before dashicons-arrow-down');
-		$( window ).on( 'resize.genesisSample', _doResize ).triggerHandler( 'resize.genesisSample' );
-		$( '.' + mainMenuButtonClass ).on( 'click.genesisSample-mainbutton', _mainmenuToggle );
-		$( '.' + subMenuButtonClass ).on( 'click.genesisSample-subbutton', _submenuToggle );
+		$( window ).on( 'resize.nooovleTheme', _doResize ).triggerHandler( 'resize.nooovleTheme' );
+		$( '.' + mainMenuButtonClass ).on( 'click.nooovleTheme-mainbutton', _mainmenuToggle );
+		$( '.' + subMenuButtonClass ).on( 'click.nooovleTheme-subbutton', _submenuToggle );
 	};
 
 	// add nav class and ID to related button
@@ -56,7 +56,7 @@
 		}
 		$this.attr( 'id', 'mobile-' + $( nav ).attr( id ) );
 	}
-	
+
 	// check CSS rule to determine width
 	function _combineMenus(){
 		if ( ( $( '.js nav' ).css( 'position' ) == 'relative' ) && $( '.nav-primary' ).length > 0 ) { // depends on .js nav having position: relative; in style.css
@@ -186,11 +186,11 @@
 
 		// run test on resize of the window
 		$( window ).resize( _combineMenus );
-		
-		genesisSample.params = typeof genesisSampleL10n === 'undefined' ? '' : genesisSampleL10n;
 
-		if ( typeof genesisSample.params !== 'undefined' ) {
-			genesisSample.init();
+		nooovleTheme.params = typeof nooovleThemeL10n === 'undefined' ? '' : nooovleThemeL10n;
+
+		if ( typeof nooovleTheme.params !== 'undefined' ) {
+			nooovleTheme.init();
 		}
 
 	});
