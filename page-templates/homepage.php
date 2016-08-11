@@ -115,12 +115,9 @@ function nooovle_theme_after_header() {
 				<li class="our__works-item one-half">
 					<img src="<?php echo $worksImg['url']; ?>" alt="<?php echo $worksImg['alt']; ?>">
 				</li>
-
 			<?php
-
 			endwhile;
 		echo '</ul>';
-
 		else :
 			echo 'no item to show';
 		endif;

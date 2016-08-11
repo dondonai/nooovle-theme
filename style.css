@@ -1560,6 +1560,18 @@ p.entry-meta {
 	bottom: -20px;
 }
 
+/* Our works */
+.our__works {
+	text-align: center;
+	padding: 40px 0
+}
+.our__works .entry-title {
+	margin-bottom: 20px;
+}
+.our__works-item:nth-child(2n+1) {
+	margin-left: 0;
+}
+
 
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */
