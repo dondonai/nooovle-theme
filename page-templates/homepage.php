@@ -16,33 +16,61 @@ remove_action( 'genesis_loop', 'genesis_do_loop' );
 
 
 // Add actions
+// add_action( 'genesis_header', 'nooove_theme_hero' );
 add_action( 'genesis_after_header', 'nooovle_theme_after_header' );
 
 
 // Functions
-function nooovle_theme_after_header() {
-
+function nooove_theme_hero() {
 	?>
 	<?php // hero section ?>
-	<section class='after-header'>
+	<section class='hero'>
 	<?php
-		genesis_structural_wrap('after-header', 'open');
+		genesis_structural_wrap('hero', 'open');
 		$heroTxt = get_field('hero_text');
 		$heroBtn = get_field('hero_button_label');
 		$heroImg = get_field('hero_image');
 		?>
-		<div class="four-sixths first">
+		<div class="hero__text four-sixths first">
 		<h4><?php echo $heroTxt; ?></h4>
 		<button class="btn"><?php echo $heroBtn; ?></button>
 		</div>
-		<div class="two-sixths">
+		<div class="hero__image two-sixths">
 			<img src="<?php echo $heroImg['url']; ?>" alt="<?php echo $heroImg['alt']; ?>">
 		</div>
 
 		<?php
 		genesis_structural_wrap( 'after-header', 'close');
 	?>
-	</section> <!-- end of .after-header -->
+	</section> <!-- end of .hero -->
+
+	<?
+}
+
+function nooovle_theme_after_header() {
+	?>
+	<?php // hero section ?>
+	<section class='hero__wrapper'>
+	<?php
+		genesis_structural_wrap('hero', 'open');
+		$heroTxt = get_field('hero_text');
+		$heroBtn = get_field('hero_button_label');
+		$heroImg = get_field('hero_image');
+		?>
+		<div class="hero four-sixths first">
+			<div class="hero__content">
+				<h4 class="hero__text"><?php echo $heroTxt; ?></h4>
+				<button class="button"><?php echo $heroBtn; ?></button>
+			</div>
+		</div>
+		<div class="hero__image two-sixths">
+			<img src="<?php echo $heroImg['url']; ?>" alt="<?php echo $heroImg['alt']; ?>">
+		</div>
+
+		<?php
+		genesis_structural_wrap( 'after-header', 'close');
+	?>
+	</section> <!-- end of .hero -->
 
 	<?php // testimonial 1 ?>
 	<section class="testimonial">

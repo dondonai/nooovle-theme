@@ -69,7 +69,7 @@ add_theme_support( 'genesis-responsive-viewport' );
 // Add wraps
 add_theme_support( 'genesis-structural-wraps', array(
 	'header',
-	'after-header',
+	'hero',
 	'testimonial',
 	'our-works',
 	'services',

@@ -156,7 +156,7 @@ body > div {
 body {
 	background-color: #fff;
 	color: #333;
-	font-family: 'Source Sans Pro', sans-serif;
+	font-family: 'Open Sans', sans-serif;
 	font-size: 20px;
 	font-size: 2rem;
 	-webkit-font-smoothing: antialiased;
@@ -182,7 +182,7 @@ textarea:focus,
 }
 
 a {
-	color: #c3251d;
+	color: #be1e2d;
 	text-decoration: underline;
 }
 
@@ -252,8 +252,8 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: 'Source Sans Pro', sans-serif;
-	font-weight: 600;
+	font-family: 'Lato', sans-serif;
+	font-weight: 400;
 	line-height: 1.2;
 	margin: 0 0 10px;
 }
@@ -302,6 +302,7 @@ video,
 
 img {
 	height: auto;
+	display: block;
 }
 
 figure {
@@ -421,14 +422,15 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"],
 .button {
-	background-color: #333;
+	background-color: #00a651;
 	border: 0;
+	border-radius: 4px;
 	color: #fff;
 	cursor: pointer;
-	font-size: 16px;
-	font-size: 1.6rem;
+	font-size: 22px;
+	font-size: 2.2rem;
 	font-weight: 700;
-	padding: 16px 24px;
+	padding: 15px 30px;
 	text-decoration: none;
 	white-space: normal;
 	width: auto;
@@ -444,7 +446,7 @@ input:focus[type="button"],
 input:focus[type="reset"],
 input:focus[type="submit"],
 .button:focus  {
-	background-color: #c3251d;
+	background-color: #be1e2d;
 	color: #fff;
 }
 
@@ -811,7 +813,7 @@ th:first-child {
 
 .entry-title a:hover,
 .entry-title a:focus {
-	color: #c3251d;
+	color: #be1e2d;
 }
 
 .widget-title {
@@ -974,7 +976,7 @@ img.alignright,
 }
 
 .sidebar .enews-widget input[type="submit"] {
-	background-color: #c3251d;
+	background-color: #be1e2d;
 	color: #fff;
 }
 
@@ -1031,7 +1033,10 @@ img.alignright,
 ---------------------------------------------------------------------------------------------------- */
 
 .site-header {
-	background-color: #fff;
+	background-color: rgba(90, 74, 66, 0.5);
+	position: absolute;
+	width: 100%;
+	z-index: 999;
 }
 
 .site-header > .wrap {
@@ -1043,6 +1048,7 @@ img.alignright,
 
 .title-area {
 	float: left;
+	min-height: 60px;
 	padding: 10px 0;
 	width: 300px;
 }
@@ -1140,7 +1146,7 @@ img.alignright,
 .genesis-nav-menu .current-menu-item > a,
 .genesis-nav-menu .sub-menu .current-menu-item > a:hover,
 .genesis-nav-menu .sub-menu .current-menu-item > a:focus  {
-	color: #c3251d;
+	color: #be1e2d;
 	text-decoration: underline;
 }
 
@@ -1336,7 +1342,7 @@ p.entry-meta {
 .archive-pagination a:hover,
 .archive-pagination a:focus,
 .archive-pagination .active a {
-	background-color: #c3251d;
+	background-color: #be1e2d;
 	color: #fff;
 }
 
@@ -1461,6 +1467,32 @@ p.entry-meta {
 
 .site-footer p {
 	margin-bottom: 0;
+}
+
+/* # Custom Style
+---------------------------------------------------------------------------------------------------- */
+
+/* Hero */
+
+.hero__wrapper {
+	background-color: #f7931e;
+	padding-bottom: 80px;
+	padding-top: 180px;
+	position: relative;
+}
+.hero {
+	margin-top: 110px;
+	position: relative;
+}
+.hero__content {
+	display: inline-block;
+}
+.hero__text {
+	color: #fff;
+	font-size: 36px;
+	font-size: 3.6rem;
+	margin-bottom: 20px;
+	max-width: 560px;
 }
 
 
@@ -1726,7 +1758,7 @@ p.entry-meta {
 	.js nav button:focus,
 	.js .menu-toggle:focus {
 		background-color: #fff;
-		color: #c3251d;
+		color: #be1e2d;
 	}
 
 	.footer-widgets-1,
