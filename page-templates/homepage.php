@@ -83,11 +83,13 @@ function nooovle_theme_after_header() {
 		$clientTestimony = get_field('client_1_testimony');
 	?>
 		<div class="client">
-			<img class="client__img" src="<?php echo $clientImg['url']; ?>" alt="<?php echo $clientImg['alt']; ?>">
-			<div class="client__info">
-				<h4 class="client__info-name"><?php echo $clientName; ?></h4>
-				<span><?php echo $clientCompany; ?></span>
-				<span><?php echo $clientPosition; ?></span>
+			<div class="client__content">
+				<img class="client__content-img" src="<?php echo $clientImg['url']; ?>" alt="<?php echo $clientImg['alt']; ?>">
+				<div class="client__content-info">
+					<h4 class="client__info-name"><?php echo $clientName; ?></h4>
+					<span><?php echo $clientCompany; ?>,</span>
+					<span><?php echo $clientPosition; ?></span>
+				</div>
 			</div>
 			<div class="client__testimony">
 				<p><?php echo $clientTestimony; ?></p>

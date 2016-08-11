@@ -1495,6 +1495,71 @@ p.entry-meta {
 	max-width: 560px;
 }
 
+/* Testimonial */
+.testimonial {
+	background-color: #eee;
+	padding: 40px 0;
+}
+.client__content {
+	margin: 0 auto;
+	max-width: 360px;
+	position: relative;
+}
+.client__content-img,
+.client__content-info {
+	display: inline-block;
+}
+.client__content-img {
+	border-radius: 50%;
+}
+.client__content-info {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	line-height: 1;
+	margin-left: 10px;
+}
+.client__info-name {
+	margin: 0;
+	text-transform: uppercase;
+}
+.client__content-info span {
+	color: #aaa;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	font-style: italic;
+	font-size: 14px;
+	font-size: 1.4rem;
+}
+.client__testimony p {
+	margin: 40px auto;
+	max-width: 540px;
+	text-align: center;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	font-style: italic;
+	font-size: 20px;
+	font-size: 2rem;
+	line-height: 1.2;
+	position: relative;
+}
+.client__testimony p::before,
+.client__testimony p::after {
+	font-family: fontawesome;
+	position: absolute;
+	color: #f7931e;
+}
+.client__testimony p::before {
+	content: '\f10d';
+	left: -20px;
+	top: -20px;
+}
+.client__testimony p::after {
+	content: '\f10e';
+	right: -20px;
+	bottom: -20px;
+}
+
 
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */
