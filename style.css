@@ -1572,6 +1572,36 @@ p.entry-meta {
 	margin-left: 0;
 }
 
+/* Services */
+/* try backstretch for the bg */
+.services {
+	background-image: url(images/bg-services.jpg);
+	background-position: bottom center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding: 40px 0 220px;
+}
+.services__intro {
+	font-size: 26px;
+	font-size: 2.6rem;
+	text-align: center;
+}
+.plus-more {
+	font-size: 26px;
+	font-size: 2.6rem;
+	margin: 20px 0;
+	text-transform: uppercase;
+	text-align: center;
+}
+.services__items {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 26px;
+	font-size: 2.6rem;
+	line-height: 36px;
+	max-width: 360px;
+	margin: 0 auto;
+}
+
 
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */

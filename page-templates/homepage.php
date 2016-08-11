@@ -136,7 +136,8 @@ function nooovle_theme_after_header() {
 		$servicesIntro = get_field('services_intro');
 		if( have_rows('services') ) :
 	?>
-			<div><?php echo $servicesIntro; ?></div>
+			<h4 class="services__intro"><?php echo $servicesIntro; ?></h4>
+			<h4 class="plus-more">Plus More!</h4>
 			<ul class="services__items">
 		<?php
 			while( have_rows('services') ) : the_row();
